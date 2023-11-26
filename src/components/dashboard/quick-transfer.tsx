@@ -12,7 +12,7 @@ const data = [
 
 export const QuickTransfer = () => {
   return (
-    <main className="bg-white rounded-xl p-[1.25rem] dark:bg-slate-800">
+    <main className="bg-white rounded-xl p-[1.25rem] dark:bg-slate-800 overflow-auto">
       <div className="iflex gap-2 pb-3 border-b border-[#E3E3E3]">
         <EmptyWallet />
         <Text className="text-base font-medium text-[#121212] dark:text-white">

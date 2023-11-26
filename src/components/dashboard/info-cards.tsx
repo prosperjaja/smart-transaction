@@ -1,16 +1,17 @@
 import { builder } from "@/api/builder";
 import { Skeleton, Text, Title } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
+import capitalize from "lodash.capitalize";
 import { ArrowDown2, Card, CardSend, Profile2User } from "iconsax-react";
-import React from "react";
+import React, { ReactNode } from "react";
 import { amountFormatter } from "@/utils";
 import clsx from "clsx";
 
-const icons = [
-  <Profile2User color="#2F70F2" />,
-  <CardSend color="#876AFE" />,
-  <Card color="#FFBC02" />,
-];
+const icons: Record<string, ReactNode> = {
+  active_users: <Profile2User color="#2F70F2" />,
+  transactions: <CardSend color="#876AFE" />,
+  cards_issued: <Card color="#FFBC02" />,
+};
 const infoColors = ["#2F70F2", "#876AFE", "#FFBC02"];
 
 export const InfoCards = () => {
@@ -40,14 +41,14 @@ export const InfoCards = () => {
               className="p-[1.25rem] bg-white rounded-xl istack gap-3 dark:bg-slate-800 "
             >
               <div className="iflex gap-2">
-                {icons[idx]}
+                {icons[name]}
                 <Text
                   className="text-[clamp(0.6rem,1vw,1rem)] font-medium"
                   style={{
                     color: infoColors[idx],
                   }}
                 >
-                  {name?.replace("_", " ")}
+                  {capitalize(name?.replace("_", " "))}
                 </Text>
               </div>
               <div className="iflex">

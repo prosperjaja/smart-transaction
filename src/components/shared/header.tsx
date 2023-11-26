@@ -3,6 +3,7 @@ import { Avatar, Text, TextInput, rem } from "@mantine/core";
 import { Message, Notification, SearchNormal } from "iconsax-react";
 import React from "react";
 import { TbSettings2 } from "react-icons/tb";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 export const Header = () => {
   return (
@@ -50,6 +51,9 @@ export const Header = () => {
           <Text className="text-base text-[#121212] font-semibold dark:text-white">
             Alex Smith
           </Text>
+          <div className="hidden max-[870px]:block">
+            <HiOutlineMenuAlt3 size={22} />
+          </div>
         </figure>
       </section>
     </article>

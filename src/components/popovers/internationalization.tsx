@@ -13,7 +13,11 @@ const data = [
 
 export const InternationalizationPopover = () => {
   const [opened, { close, toggle }] = useDisclosure(false);
-  const { locales } = useRouter();
+  const { locale, locales, push } = useRouter();
+
+  const handleClick = (l: string) => () => {
+    push(`/`, undefined, { locale: l });
+  };
 
   return (
     <Popover
@@ -25,7 +29,7 @@ export const InternationalizationPopover = () => {
     >
       <Popover.Target>
         <Text className="text-sm iflex gap-2 cursor-pointer" onClick={toggle}>
-          Select Language
+          Select Language: {locale}
           <ArrowDown2 size={18} />
         </Text>
       </Popover.Target>
@@ -36,24 +40,14 @@ export const InternationalizationPopover = () => {
         className="dark:bg-slate-800"
       >
         <div className=" flex flex-col gap-1">
-          {/* {data.map(({ id, language }) => (
-            <div
+          {locales?.map((l) => (
+            <Text
+              key={l}
               className="iflex gap-2 p-2 rounded-lg hover:bg-[#ddd] dark:hover:bg-slate-700"
-              key={id}
+              onClick={handleClick(l)}
             >
-              <Text className="cursor-pointer">{language}</Text>
-            </div>
-          ))} */}
-          {[...(locales as string[])].sort().map((locale) => (
-            <Link
-              key={locale}
-              href="/"
-              locale={locale}
-              className="iflex gap-2 p-2 rounded-lg hover:bg-[#ddd] dark:hover:bg-slate-700"
-              onClick={() => close()}
-            >
-              {locale}
-            </Link>
+              {l}
+            </Text>
           ))}
         </div>
       </Popover.Dropdown>

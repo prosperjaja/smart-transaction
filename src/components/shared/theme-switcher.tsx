@@ -1,11 +1,15 @@
 import { Moon, Sun1 } from "iconsax-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import clsx from "clsx";
 
 export const ThemeSwitcher = () => {
   const { resolvedTheme, setTheme } = useTheme();
-
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    setActive(true);
+  }, []);
+  if (!active) return null;
   return (
     <figure className="border border-[#ccc] bg-slate-100 rounded-lg p-2 justify-between iflex">
       <div

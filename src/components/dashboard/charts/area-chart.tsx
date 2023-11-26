@@ -2,18 +2,34 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
+import { useQuery } from "@tanstack/react-query";
+import { builder } from "@/api/builder";
+import dayjs from "dayjs";
+import { Text } from "@mantine/core";
 
 export const AreaChart = () => {
+  const { data: chartData } = useQuery({
+    queryFn: () => builder.use().transaction_logs.fetch(),
+    queryKey: builder.transaction_logs.fetch.get(),
+    select: ({ data }) => data?.data,
+  });
+
+  console.log(chartData);
+
   const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
   const series = [
     {
-      name: "series1",
-      data: [31, 40, 28, 51, 42, 109, 100],
+      name: "Salary",
+      data: chartData?.map((item) =>
+        item?.salary_paid?.toString()?.slice(0, 2)
+      ),
     },
     {
-      name: "series2",
-      data: [11, 32, 45, 32, 34, 52, 41],
+      name: "Cash Bond",
+      data: chartData?.map((item) =>
+        item?.cash_bond_bought?.toString()?.slice(0, 2)
+      ),
     },
   ];
   const options: ApexOptions = {
@@ -34,19 +50,7 @@ export const AreaChart = () => {
     },
     xaxis: {
       type: "datetime",
-      categories: [
-        "20 June",
-        "21 June",
-        "22 June",
-        "23 June",
-        "24 June",
-        "25 June",
-        "26 June",
-        // "27 June",
-        // "28 June",
-        // "29 June",
-        // "30 June",
-      ],
+      categories: chartData?.map((item) => dayjs(item?.date)?.format("MMM DD")),
     },
     fill: {
       type: "gradient",
@@ -83,7 +87,21 @@ export const AreaChart = () => {
 
   return (
     <div id="chart">
-      <ApexCharts options={options} series={series} type="area" height={280} />
+      {chartData ? (
+        <ApexCharts
+          options={options}
+          series={series as any}
+          type="area"
+          height={280}
+          width="100%"
+        />
+      ) : (
+        <div className="h-full bg-white rounded-xl iflex justify-center">
+          <Text className="text-base font-bold text-[#121212]">
+            No Chart Data Available...
+          </Text>
+        </div>
+      )}
     </div>
   );
 };

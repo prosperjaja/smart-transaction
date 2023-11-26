@@ -68,3 +68,20 @@ export interface ITransactionOverviewData {
   current: number;
   last_month: number;
 }
+
+//TYPES FOR DASHBOARD AREA CHART
+export interface IDashboardChart {
+  message: string;
+  current_page: number;
+  page_size: number;
+  next_page_url: null;
+  prev_page_url: null;
+  count: number;
+  data: IDashboardChartData[];
+}
+
+export interface IDashboardChartData {
+  date: Date;
+  salary_paid: number;
+  cash_bond_bought: number;
+}

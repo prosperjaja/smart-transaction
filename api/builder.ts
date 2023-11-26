@@ -1,6 +1,11 @@
 import { createBuilder } from "@ibnlanre/portal";
 import { API } from "./axios-config";
-import { IForecast, ITransactionDetails, ITransactionOverview } from "@/types";
+import {
+  IDashboardChart,
+  IForecast,
+  ITransactionDetails,
+  ITransactionOverview,
+} from "@/types";
 
 export const builder = createBuilder({
   total_points: {
@@ -11,5 +16,8 @@ export const builder = createBuilder({
   },
   transaction_overview: {
     fetch: () => API.get<ITransactionOverview>(`/api/v1/transactions/overview`),
+  },
+  transaction_logs: {
+    fetch: () => API.get<IDashboardChart>(`/api/v1/transactions/payout-logs`),
   },
 });
