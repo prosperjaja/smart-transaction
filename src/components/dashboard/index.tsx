@@ -22,7 +22,7 @@ export const Dashboard = () => {
       </section>
       {/* SECOND LAYER OF DASHBOARD WITH LINE CHART AND TABLE */}
       <section className="flex items-center gap-[clamp(1rem,2vw,1.5rem)] h-full max-[1265px]:flex-col">
-        <article className="w-[20%] h-full p-[clamp(1rem,2vw,2rem)] max-[1265px]:w-full">
+        <article className="w-[25%] h-full p-[clamp(1rem,2vw,2rem)] max-[1265px]:w-full">
           <ActivityCharts />
         </article>
         <article className="flex-1 h-full p-[clamp(1rem,2vw,2rem)] w-full">

@@ -96,7 +96,7 @@ export const AreaChart = () => {
           width="100%"
         />
       ) : (
-        <div className="h-full bg-white rounded-xl iflex justify-center">
+        <div className="h-[20vh] bg-white dark:bg-slate-700 rounded-xl iflex justify-center">
           <Text className="text-base font-bold text-[#121212]">
             No Chart Data Available...
           </Text>

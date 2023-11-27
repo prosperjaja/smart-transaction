@@ -32,7 +32,7 @@ export const InfoCards = () => {
                 w="100%"
                 h={110}
                 radius="lg"
-                className="bg-[#ccc] dark:bg-slate-800"
+                className="bg-[#ccc] dark:bg-slate-700"
               />
             ))
         : transactionOverview?.map(({ name, current, last_month }, idx) => (
