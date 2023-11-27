@@ -15,7 +15,7 @@ export const Dashboard = () => {
           <InfoCards />
           <DashboardAreaChart />
         </article>
-        <article className="w-[40%] max-[1265px]:w-full p-[clamp(1rem,2vw,2rem)] istack gap-[clamp(1rem,2vw,2rem)] istack h-full">
+        <article className="w-[40%] max-[1265px]:w-full p-[clamp(1rem,2vw,2rem)] istack gap-[clamp(1rem,2vw,2rem)] istack h-full overflow-auto">
           <TransactionDetails />
           <QuickTransfer />
         </article>

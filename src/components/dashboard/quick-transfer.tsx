@@ -12,7 +12,7 @@ const data = [
 
 export const QuickTransfer = () => {
   return (
-    <main className="bg-white rounded-xl p-[1.25rem] dark:bg-slate-800  w-full">
+    <main className="bg-white rounded-xl p-[1.25rem] dark:bg-slate-800  w-full overflow-auto">
       <div className="iflex gap-2 pb-3 border-b border-[#E3E3E3]">
         <EmptyWallet />
         <Text className="text-base font-medium text-[#121212] dark:text-white">
@@ -27,7 +27,7 @@ export const QuickTransfer = () => {
               className=" px-[clamp(11px,0.8vw,12px)] py-[clamp(5px,0.6vw,9px)] border border-[#DFDFDF] gap-[12px] flex rounded-[6px] items-center"
             >
               {icon}
-              <Text className="text-[#121212] text-xs font-medium dark:text-white">
+              <Text className="text-[#121212] text-xs font-medium dark:text-white whitespace-nowrap">
                 {details}
               </Text>
             </article>

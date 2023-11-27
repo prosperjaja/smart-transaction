@@ -22,7 +22,7 @@ export const InfoCards = () => {
   });
 
   return (
-    <section className="grid grid-cols-3 gap-[clamp(1rem,1.5vw,1.5rem)] w-full">
+    <section className="grid grid-cols-3 gap-[clamp(1rem,1.5vw,1.5rem)] w-full h-full overflow-auto">
       {isLoading
         ? Array(3)
             ?.fill(0)
@@ -38,7 +38,7 @@ export const InfoCards = () => {
         : transactionOverview?.map(({ name, current, last_month }, idx) => (
             <article
               key={idx}
-              className="p-[1.25rem] bg-white rounded-xl istack gap-3 dark:bg-slate-800 "
+              className="p-[1.25rem] bg-white rounded-xl istack gap-3 dark:bg-slate-800 min-w-[177px]"
             >
               <div className="iflex gap-2">
                 {icons[name]}

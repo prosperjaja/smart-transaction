@@ -7,7 +7,7 @@ import { Avatar, Text } from "@mantine/core";
 export const DashboardLayout = ({ children }: { children: ReactNode }) => (
   <main className="iflex h-[100vh] overflow-auto">
     <Sidebar />
-    <section className="istack flex-1 h-full ">
+    <section className="istack flex-1 h-full overflow-auto">
       <Header />
       {children}
     </section>
