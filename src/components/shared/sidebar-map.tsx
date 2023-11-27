@@ -6,28 +6,57 @@ import { FaRegUser } from "react-icons/fa";
 import React from "react";
 import { useRouter } from "next/router";
 import clsx from "clsx";
-import { useIntl } from "react-intl";
+import { MessageFormatElement, useIntl } from "react-intl";
 
 export const SidebarMap = () => {
   const { pathname } = useRouter();
   // const sidebarTitle = intl.messages["page.home.sidebar.title"];
   // const sidebarData = intl.messages["page.home.sidebar.data"];
   // const sidebarLowerData = intl.messages["page.home.sidebar.lowerpartdata"];
+  const intl = useIntl();
+  const dashboard = intl.messages["page.home.sidebar.dashboard"] as string;
+  intl.messages["page.home.sidebar.title"];
+  const sidebarData = intl.messages[
+    "page.home.sidebar.data"
+  ] as unknown as Record<string, string>;
+  const sidebarLowerData = intl.messages[
+    "page.home.sidebar.Lowerdata"
+  ] as unknown as Record<string, string>;
   const data = [
     {
       id: 139,
-      name: "Dashboard",
+      name: dashboard,
       children: [
-        { id: 1, name: "Home", icon: <Category size={18} />, link: "/" },
-        { id: 2, name: "Files", icon: <FaRegUser />, link: "/files" },
+        {
+          id: 1,
+          name: sidebarData?.home,
+          icon: <Category size={18} />,
+          link: "/",
+        },
+        {
+          id: 2,
+          name: sidebarData?.files,
+          icon: <FaRegUser />,
+          link: "/files",
+        },
         {
           id: 3,
-          name: "Deadline Project",
+          name: sidebarData?.deadline,
           icon: <PiBriefcaseLight />,
           link: "/deadline-project",
         },
-        { id: 4, name: "Management", icon: <SlLock />, link: "/management" },
-        { id: 5, name: "Database", icon: <SlLock />, link: "/database" },
+        {
+          id: 4,
+          name: sidebarData?.management,
+          icon: <SlLock />,
+          link: "/management",
+        },
+        {
+          id: 5,
+          name: sidebarData?.database,
+          icon: <SlLock />,
+          link: "/database",
+        },
       ],
     },
     {
@@ -36,37 +65,37 @@ export const SidebarMap = () => {
       children: [
         {
           id: 1,
-          name: "Team Award",
+          name: sidebarLowerData?.team,
           icon: <Category size={18} />,
           link: "/team-award",
         },
         {
           id: 2,
-          name: "Invoice Data",
+          name: sidebarLowerData?.invoice,
           icon: <FaRegUser />,
           link: "/invoice-data",
         },
         {
           id: 3,
-          name: "Settings",
+          name: sidebarLowerData?.settings,
           icon: <IoSettingsOutline />,
           link: "/settings",
         },
         {
           id: 4,
-          name: "Announments",
+          name: sidebarLowerData?.announcement,
           icon: <SlLock />,
           link: "/announcements",
         },
         {
           id: 5,
-          name: "Media Assets",
+          name: sidebarLowerData?.media,
           icon: <SlLock />,
           link: "/media-assets",
         },
         {
           id: 6,
-          name: "Client Feedback",
+          name: sidebarLowerData?.client,
           icon: <SlLock />,
           link: "/client-feedback",
         },

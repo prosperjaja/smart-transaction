@@ -1,0 +1,23 @@
+{
+  "page.home.sidebar.dashboard": "Dashboard",
+  "page.home.sidebar.customer": "Customer Data",
+  "page.home.sidebar.data": {
+    "home":"Home",
+    "files": "Files",
+    "deadline":"Deadline Project",
+    "management": "Management",
+    "database":"Database"
+},
+  "page.home.sidebar.Lowerdata":{
+     "team": "Team Award" ,
+      "invoice": "Invoice Data",
+      "settings": "Settings",
+      "announcement": "Announcement",
+     "media": "Media Assets",
+      "client" :"Client Feedback"
+  },
+  "page.home.header.placeholder": "Search property",
+  "page.home.hero.active-users": ["Active Users", "14.7M", "32%"],
+  "page.home.hero.active-transactions": ["Transactions", "$1.234.10", "32%"],
+  "page.home.hero.active.cards.issued": ["Cards Issued", "3.442", "32%"]
+}
