@@ -1,19 +1,22 @@
 {
-  "page.home.sidebar.data": [
-    "Thuis",
-    "Bestanden",
-    "Deadline Project",
-    "Beheer",
-    "Database",
-    "Team Award",
-    "Factuurgegevens",
-    "Instellingen",
-    "Aankondiging",
-    "Media-assets",
-    "Klantfeedback"
-  ],
+  "page.home.sidebar.data": {
+    "home":"Thuis",
+    "files":"Bestanden",
+   "deadline": "Deadline Project",
+    "management":"Beheer",
+    "database":"Database"
+  },
+    "page.home.sidebar.Lowerdata":{
+       "team": "Team Award",
+       "invoice": "Factuurgegevens",
+        "settings":"Instellingen",
+       "announcement": "Aankondiging",
+       "media": "Media-assets",
+       "client": "Klantfeedback"
+    },
 
-  "page.home.sidebar.title": ["Tableau de bord", "Données clients"],
+  "page.home.sidebar.dashboard": "Tableau de bord" ,
+  "page.home.sidebar.customer": "Données clients" ,
 
   "page.home.header.placeholder": "Rechercher une propriété",
   "page.home.hero.active-users": ["Utilisateurs actifs", "14.7M", "32%"],
