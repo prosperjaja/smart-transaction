@@ -4,6 +4,7 @@ import React from "react";
 import TopBarChart from "./charts/bar-chart";
 import BarChart from "./charts/bar-chart";
 import { ArrowDown2 } from "iconsax-react";
+import { useIntl } from "react-intl";
 
 const data = [
   { id: 1, title: "View Per Quarter" },
@@ -11,12 +12,15 @@ const data = [
 ];
 
 export const ActivityCharts = () => {
+  const intl = useIntl();
+  const activity = intl.messages["page.home.hero.activity-charts"] as string;
+
   return (
     <main className="bg-white rounded-xl p-[1.25rem] h-full dark:bg-slate-800 ">
       <div className="iflex gap-2 pb-3 border-b border-[#E3E3E3]">
         <BiCoinStack size={24} />
         <Text className="text-base font-medium text-[#121212] dark:text-white">
-          Activity Charts
+          {activity}
         </Text>
       </div>
       <figure className="flex flex-col items-center gap-2 justify-center">

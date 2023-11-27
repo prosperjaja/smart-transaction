@@ -18,8 +18,9 @@
   "page.home.sidebar.dashboard": "Tableau de bord" ,
   "page.home.sidebar.customer": "Données clients" ,
 
-  "page.home.header.placeholder": "Rechercher une propriété",
-  "page.home.hero.active-users": ["Utilisateurs actifs", "14.7M", "32%"],
-  "page.home.hero.active-transactions": ["Transactions", "1,234.10 $", "32%"],
-  "page.home.hero.active.cards.issued": ["Cartes émises", "3,442", "32%"]
+  "page.home.header.placeholder": "Zoek eigendom...",
+ "page.home.hero.transaction-details": "Transactiegegevens",
+  "page.home.hero.quick-transfer": "Snelle overdrach",
+  "page.home.hero.activity-charts": "Activiteitendiagrammen",
+  "page.home.hero.Total-points": "Totaalpunten"
 }

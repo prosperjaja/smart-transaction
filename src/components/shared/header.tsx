@@ -3,9 +3,12 @@ import { Avatar, Text, TextInput, rem } from "@mantine/core";
 import { Message, Notification, SearchNormal } from "iconsax-react";
 import React from "react";
 import { TbSettings2 } from "react-icons/tb";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { useIntl } from "react-intl";
 
 export const Header = () => {
+  const intl = useIntl();
+  const placeholder = intl.messages["page.home.header.placeholder"] as string;
+
   return (
     <article className="px-[clamp(1.5rem,2vw,2rem)] py-[1rem] bg-[#F7F7FF] iflex justify-between dark:bg-slate-700">
       <TextInput
@@ -37,7 +40,7 @@ export const Header = () => {
           },
         }}
         icon={<SearchNormal size={22} />}
-        placeholder="Search Property..."
+        placeholder={placeholder}
       />
       <section className="iflex gap-[clamp(1rem,1.5vw,1.5rem)] ">
         <div className="flex  items-center gap-[clamp(1rem,1.5vw,1.5rem)] max-[870px]:hidden">

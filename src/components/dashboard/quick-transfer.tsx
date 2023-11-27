@@ -2,6 +2,7 @@ import { Mastercard, Visa } from "@/icons";
 import { Text } from "@mantine/core";
 import { EmptyWallet } from "iconsax-react";
 import React from "react";
+import { useIntl } from "react-intl";
 
 const data = [
   { id: 1, icon: <Visa />, details: "3419 Debit Card" },
@@ -11,12 +12,15 @@ const data = [
 ];
 
 export const QuickTransfer = () => {
+  const intl = useIntl();
+  const transfer = intl.messages["page.home.hero.quick-transfer"] as string;
+
   return (
     <main className="bg-white rounded-xl p-[1.25rem] dark:bg-slate-800  w-full overflow-auto">
       <div className="iflex gap-2 pb-3 border-b border-[#E3E3E3]">
         <EmptyWallet />
         <Text className="text-base font-medium text-[#121212] dark:text-white">
-          Quick Transfer
+          {transfer}
         </Text>
       </div>
       <article className="overflow-x-auto scroll-bar-hidden">
