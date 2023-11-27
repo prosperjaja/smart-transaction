@@ -15,6 +15,7 @@ export const SidebarMap = () => {
   // const sidebarLowerData = intl.messages["page.home.sidebar.lowerpartdata"];
   const intl = useIntl();
   const dashboard = intl.messages["page.home.sidebar.dashboard"] as string;
+  const customer = intl.messages["page.home.sidebar.customer"] as string;
   intl.messages["page.home.sidebar.title"];
   const sidebarData = intl.messages[
     "page.home.sidebar.data"
@@ -61,7 +62,7 @@ export const SidebarMap = () => {
     },
     {
       id: 2345,
-      name: "Customer Data",
+      name: customer,
       children: [
         {
           id: 1,
