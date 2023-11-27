@@ -11,7 +11,7 @@ export const Dashboard = () => {
     <main className="h-full istack bg-[#F6F6F6] overflow-auto dark:bg-slate-600">
       {/* FIRST LAYER OF DASHBOARD WITH AREA CHART  */}
       <section className="flex items-center gap-[clamp(1rem,2vw,2rem)] max-[1265px]:flex-col">
-        <article className="flex-1 max-[1265px]:w-full p-[clamp(1rem,2vw,2rem)] istack gap-[clamp(1rem,2vw,2rem)] h-full max-[1265px]:p-[1rem]">
+        <article className="flex-1 max-[1265px]:w-full p-[clamp(1rem,2vw,2rem)] istack gap-[clamp(1rem,2vw,2rem)]  max-[1265px]:p-[1rem]">
           <InfoCards />
           <DashboardAreaChart />
         </article>

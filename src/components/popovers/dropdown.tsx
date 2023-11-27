@@ -1,8 +1,9 @@
 import { Menu, Button, Text } from "@mantine/core";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import React from "react";
-import { Message, Notification } from "iconsax-react";
+import { LanguageSquare, Message, Notification } from "iconsax-react";
 import { TbSettings2 } from "react-icons/tb";
+import { InternationalizationPopover } from ".";
 
 const data = [
   {
@@ -35,7 +36,7 @@ export const Dropdown = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: 16,
+          gap: 24,
           padding: 10,
         }}
         className="bg-[#ccc] dark:bg-slate-800"
@@ -49,6 +50,10 @@ export const Dropdown = () => {
             {title}
           </li>
         ))}
+        <div className="py-4 iflex gap-2 ml-1">
+          <LanguageSquare />
+          <InternationalizationPopover />
+        </div>
       </Menu.Dropdown>
     </Menu>
   );
