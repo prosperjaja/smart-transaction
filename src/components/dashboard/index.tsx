@@ -15,14 +15,14 @@ export const Dashboard = () => {
           <InfoCards />
           <DashboardAreaChart />
         </article>
-        <article className="w-[40%] max-[1265px]:w-full p-[clamp(1rem,1.7vw,1.5rem)] istack gap-[clamp(1rem,1.7vw,1.5rem)] istack h-full overflow-auto">
+        <article className="w-[40%] max-[1265px]:w-full p-[clamp(1rem,2vw,2rem)] istack gap-[clamp(1rem,2vw,2rem)] istack h-full">
           <TransactionDetails />
           <QuickTransfer />
         </article>
       </section>
       {/* SECOND LAYER OF DASHBOARD WITH LINE CHART AND TABLE */}
       <section className="flex items-center gap-[clamp(1rem,2vw,1.5rem)] h-full max-[1265px]:flex-col">
-        <article className="w-[30%] h-full p-[clamp(1rem,2vw,2rem)] max-[1265px]:w-full">
+        <article className="w-[20%] h-full p-[clamp(1rem,2vw,2rem)] max-[1265px]:w-full">
           <ActivityCharts />
         </article>
         <article className="flex-1 h-full p-[clamp(1rem,2vw,2rem)] w-full">

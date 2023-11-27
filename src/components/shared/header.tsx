@@ -1,4 +1,4 @@
-import { InternationalizationPopover } from "@/popovers";
+import { Dropdown, InternationalizationPopover } from "@/popovers";
 import { Avatar, Text, TextInput, rem } from "@mantine/core";
 import { Message, Notification, SearchNormal } from "iconsax-react";
 import React from "react";
@@ -51,8 +51,8 @@ export const Header = () => {
           <Text className="text-base text-[#121212] font-semibold dark:text-white">
             Alex Smith
           </Text>
-          <div className="hidden max-[870px]:block">
-            <HiOutlineMenuAlt3 size={22} />
+          <div className="hidden max-[870px]:block cursor-pointer">
+            <Dropdown />
           </div>
         </figure>
       </section>

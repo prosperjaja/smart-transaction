@@ -22,7 +22,7 @@ export const InfoCards = () => {
   });
 
   return (
-    <section className="grid grid-cols-3 gap-[clamp(1rem,1.5vw,1.5rem)]">
+    <section className="grid grid-cols-3 gap-[clamp(1rem,1.5vw,1.5rem)] w-full">
       {isLoading
         ? Array(3)
             ?.fill(0)

@@ -3,8 +3,7 @@ import React from "react";
 export const Visa = () => {
   return (
     <svg
-      className="w-[clamp(1.5rem,3.1vw,3.052rem)]"
-      // width="49"
+      width="49"
       height="30"
       viewBox="0 0 49 30"
       fill="none"

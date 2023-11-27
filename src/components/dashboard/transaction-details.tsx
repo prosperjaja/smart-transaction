@@ -1,6 +1,6 @@
 import { builder } from "@/api/builder";
 import { GoogleCloud, Spotify, TransferCircle, Upwork, Xd } from "@/icons";
-import { Avatar, Text } from "@mantine/core";
+import { Avatar, Skeleton, Text } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import React, { ReactNode } from "react";
@@ -13,7 +13,7 @@ const icons: Record<string, ReactNode> = {
 };
 
 export const TransactionDetails = () => {
-  const { data: transactionDetailsData } = useQuery({
+  const { data: transactionDetailsData, isLoading } = useQuery({
     queryFn: () => builder.use().transaction_details.fetch(),
     queryKey: builder.transaction_details.fetch.get(),
     select: ({ data }) => data?.data,
@@ -28,31 +28,40 @@ export const TransactionDetails = () => {
         </Text>
       </div>
       <section className="istack gap-4 pt-4">
-        {transactionDetailsData?.map(
-          ({ created_at, charge, charged_by }, idx) => (
-            <article key={idx} className="iflex justify-between">
-              <div className="iflex gap-4">
-                {/* <Avatar src={charged_by?.logo} size={30} radius="100%" /> */}
-                {icons[charged_by?.company]}
-                <span className="istack">
-                  <Text>{charged_by?.company}</Text>
-                  <Text className="text-[#A8A8A8] text-xs font-normal">
-                    {dayjs(created_at)?.format("YYYY-MM-DD")}
-                  </Text>
-                </span>
-              </div>
-              <Text
-                className="text-xs font-medium"
-                style={{
-                  color: charge?.type?.includes("debit")
-                    ? "#D62C2C"
-                    : "#4EEA7A",
-                }}
-              >
-                {charge?.type?.includes("debit") ? "-" : "+"}{" "}
-                {charge?.currency?.sign} {charge?.amount}
-              </Text>
-            </article>
+        {isLoading ? (
+          <Skeleton
+            height={300}
+            width="100%"
+            radius="xl"
+            className="bg-[#ccc] dark:bg-slate-800"
+          />
+        ) : (
+          transactionDetailsData?.map(
+            ({ created_at, charge, charged_by }, idx) => (
+              <article key={idx} className="iflex justify-between">
+                <div className="iflex gap-4">
+                  {/* <Avatar src={charged_by?.logo} size={30} radius="100%" /> */}
+                  {icons[charged_by?.company]}
+                  <span className="istack">
+                    <Text>{charged_by?.company}</Text>
+                    <Text className="text-[#A8A8A8] text-xs font-normal">
+                      {dayjs(created_at)?.format("YYYY-MM-DD")}
+                    </Text>
+                  </span>
+                </div>
+                <Text
+                  className="text-xs font-medium"
+                  style={{
+                    color: charge?.type?.includes("debit")
+                      ? "#D62C2C"
+                      : "#4EEA7A",
+                  }}
+                >
+                  {charge?.type?.includes("debit") ? "-" : "+"}{" "}
+                  {charge?.currency?.sign} {charge?.amount}
+                </Text>
+              </article>
+            )
           )
         )}
       </section>

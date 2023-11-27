@@ -1,39 +1,71 @@
 import React from "react";
+import {
+  Chart as ChartJS,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
-export const BarChart = () => {
-  const options = {
-    series: [
+export default function BarChart({
+  barData,
+  color,
+  empty,
+}: {
+  barData: Array<number>;
+  color: string[];
+  empty?: Array<string>;
+}) {
+  ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
+
+  const data = {
+    labels: empty,
+    datasets: [
       {
-        data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
+        label: "764",
+        data: barData,
+        backgroundColor: color,
+        // borderWidth: 1,
+        barPercentage: 0.7,
+        categoryPercentage: 0.7,
+        borderRadius: 14,
+        // width: 20,
       },
     ],
-    chart: {
-      type: "bar",
-      height: 350,
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: 4,
-        horizontal: true,
+  };
+
+  const options = {
+    // responsiveness: true,
+    // plugins: {
+    //   title: {
+    //     display: false,
+    //   },
+    //   legend: {
+    //     display: false,
+    //   },
+    // },
+
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+
+      y: {
+        grid: {
+          display: false,
+          drawBorder: false,
+        },
+        display: false,
       },
     },
-    dataLabels: {
-      enabled: false,
-    },
-    xaxis: {
-      categories: [
-        "South Korea",
-        "Canada",
-        "United Kingdom",
-        "Netherlands",
-        "Italy",
-        "France",
-        "Japan",
-        "United States",
-        "China",
-        "Germany",
-      ],
-    },
   };
-  return <div>bar-chart</div>;
-};
+
+  return (
+    <div className="bar  w-[180px] max-[850px]:w-full ">
+      <Bar data={data} options={options} />
+    </div>
+  );
+}
