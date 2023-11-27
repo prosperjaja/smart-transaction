@@ -1,4 +1,4 @@
-import { Menu, Button, Text } from "@mantine/core";
+import { Menu } from "@mantine/core";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import React from "react";
 import { LanguageSquare, Message, Notification } from "iconsax-react";

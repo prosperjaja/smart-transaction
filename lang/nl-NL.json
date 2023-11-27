@@ -22,5 +22,7 @@
  "page.home.hero.transaction-details": "Transactiegegevens",
   "page.home.hero.quick-transfer": "Snelle overdrach",
   "page.home.hero.activity-charts": "Activiteitendiagrammen",
-  "page.home.hero.Total-points": "Totaalpunten"
+  "page.home.hero.Total-points": "Totaalpunten",
+  "page.home.chart.label": "Salaris",
+  "page.home.chart.label-lower": "Contante borg"
 }

@@ -1,23 +1,13 @@
 import React from "react";
 import { Popover, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ArrowDown, ArrowDown2 } from "iconsax-react";
+import { ArrowDown2 } from "iconsax-react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-
-const data = [
-  { id: 1, language: "English" },
-  { id: 2, language: "Spanish" },
-  { id: 3, language: "Francais" },
-];
 
 export const InternationalizationPopover = () => {
   const [opened, { close, toggle }] = useDisclosure(false);
   const { locales } = useRouter();
-
-  // const handleClick = (l: string) => () => {
-  //   push(`/`, undefined, { locale: l });
-  // };
 
   return (
     <Popover

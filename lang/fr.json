@@ -24,5 +24,7 @@
  "page.home.hero.transaction-details": "Détails de la transaction",
   "page.home.hero.quick-transfer": "Transfert rapide",
   "page.home.hero.activity-charts": "Graphiques d'activité",
-  "page.home.hero.Total-points": "Points totaux"
+  "page.home.hero.Total-points": "Points totaux",
+  "page.home.chart.label": "Salaire",
+  "page.home.chart.label-lower": "Caution en espèces"
 }

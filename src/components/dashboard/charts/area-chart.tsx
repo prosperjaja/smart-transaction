@@ -5,16 +5,14 @@ import Chart from "react-apexcharts";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
 import dayjs from "dayjs";
-import { Text } from "@mantine/core";
+import { LoadingOverlay, Text } from "@mantine/core";
 
 export const AreaChart = () => {
-  const { data: chartData } = useQuery({
+  const { data: chartData, isLoading } = useQuery({
     queryFn: () => builder.use().transaction_logs.fetch(),
     queryKey: builder.transaction_logs.fetch.get(),
     select: ({ data }) => data?.data,
   });
-
-  console.log(chartData);
 
   const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -102,6 +100,7 @@ export const AreaChart = () => {
           </Text>
         </div>
       )}
+      <LoadingOverlay visible={isLoading} />
     </div>
   );
 };

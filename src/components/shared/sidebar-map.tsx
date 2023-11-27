@@ -10,9 +10,6 @@ import { MessageFormatElement, useIntl } from "react-intl";
 
 export const SidebarMap = () => {
   const { pathname } = useRouter();
-  // const sidebarTitle = intl.messages["page.home.sidebar.title"];
-  // const sidebarData = intl.messages["page.home.sidebar.data"];
-  // const sidebarLowerData = intl.messages["page.home.sidebar.lowerpartdata"];
   const intl = useIntl();
   const dashboard = intl.messages["page.home.sidebar.dashboard"] as string;
   const customer = intl.messages["page.home.sidebar.customer"] as string;
